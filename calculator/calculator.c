@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include "calculator.h"
 
 /**
  * main - Entry point for the program
@@ -15,9 +15,6 @@
  */
 
 
-int displayMenu();
-char getOperator();
-double getNumber();
 double performCalculation(char operator, double num1, double num2);
 
 int main(void)
@@ -25,60 +22,22 @@ int main(void)
     char operator;
     double num1, num2, result;
 
-    while (1) {
-        operator = getOperator();
-        if (operator == 'x' || operator == 'X') {
-            break;
-        }
+    printf("enter the first operand: ");
+    scanf("%lf", &num1);
 
-        num1 = getNumber();
-        num2 = getNumber();
+    printf("Enter the  operator: ");
+    scanf(" %c", &operator);
 
-        result = performCalculation(operator, num1, num2);
-        printf("%.1lf %c %.1lf = %.1lf\n", num1, operator, num2, result);
+    printf("enter the second operand: ");
+    scanf("%lf", &num2);
+
+    result = performCalculation(operator, num1, num2);
+
+    if (result) {
+        printf("\nThe result of your calculation is: %f\n", result);
     }
 
-    printf("Exiting calculator...\n");
     return 0;
-}
-
-// Display the menu
-int displayMenu()
-{
-    printf("\nSimple Calculator\n");
-    printf("1. Addition (+)\n");
-    printf("2. Subtraction (-)\n");
-    printf("3. Multiplication (*)\n");
-    printf("4. Division (/)\n");
-    printf("5. Exit (x)\n");
-    printf("Enter your choice: ");
-    return 0;
-}
-
-// Get operator input from user
-char getOperator()
-{
-    char ch;
-
-    do {
-        displayMenu();
-        scanf(" %c", &ch); // Read operator with a space before
-    } while (ch < '1' || ch > '5' || ch == 'x' || ch == 'X');
-
-    return ch;
-}
-
-// Get a number from the user
-double getNumber()
-{
-    double num;
-
-    while (scanf("%lf", &num) != 1) {
-        printf("Invalid input. Please enter a number: ");
-        scanf("%*[^\n]"); // Clear the input buffer
-    }
-
-    return num;
 }
 
 // Perform calculation based on operator
@@ -98,8 +57,6 @@ double performCalculation(char operator, double num1, double num2)
             } else {
                 return num1 / num2;
             }
-        default:
-            return 0.0;
     }
 }
 

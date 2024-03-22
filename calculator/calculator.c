@@ -20,7 +20,8 @@ char getOperator();
 double getNumber();
 double performCalculation(char operator, double num1, double num2);
 
-int main(void) {
+int main(void)
+{
     char operator;
     double num1, num2, result;
 
@@ -42,7 +43,8 @@ int main(void) {
 }
 
 // Display the menu
-int displayMenu() {
+int displayMenu()
+{
     printf("\nSimple Calculator\n");
     printf("1. Addition (+)\n");
     printf("2. Subtraction (-)\n");
@@ -54,7 +56,8 @@ int displayMenu() {
 }
 
 // Get operator input from user
-char getOperator() {
+char getOperator()
+{
     char ch;
 
     do {
@@ -65,8 +68,9 @@ char getOperator() {
     return ch;
 }
 
-// Function to get a number from the user
-double getNumber() {
+// Get a number from the user
+double getNumber()
+{
     double num;
 
     while (scanf("%lf", &num) != 1) {
@@ -78,7 +82,8 @@ double getNumber() {
 }
 
 // Perform calculation based on operator
-double performCalculation(char operator, double num1, double num2) {
+double performCalculation(char operator, double num1, double num2)
+{
     switch (operator) {
         case '+':
             return num1 + num2;
@@ -89,12 +94,12 @@ double performCalculation(char operator, double num1, double num2) {
         case '/':
             if (num2 == 0) {
                 printf("Error: Division by zero is not allowed.\n");
-                return 0.0; // Or handle the error differently
+                return 0.0;
             } else {
                 return num1 / num2;
             }
         default:
-            return 0.0; // Or handle invalid operator differently
+            return 0.0;
     }
 }
 

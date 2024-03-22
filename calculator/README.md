@@ -58,8 +58,3 @@ Simple Calculator
 5. Exit (x)
    Enter your choice: x
    Exiting calculator...
-
-### Additional Notes:
-
-You can modify the Makefile to customize the compiler or output filename.
-For more advanced features, consider implementing support for additional operations, parentheses for expression evaluation, or error handling for invalid expressions.

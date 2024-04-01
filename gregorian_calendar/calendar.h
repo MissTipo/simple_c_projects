@@ -1,6 +1,9 @@
 #ifndef CALENDAR_H
 #define CALENDAR_H
 
+#define TRUE   1
+#define FALSE  0
+
 #define MONTHS_IN_YEAR 13  // Includes an element for leap year adjustment
 
 typedef struct {

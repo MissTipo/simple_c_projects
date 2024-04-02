@@ -13,7 +13,7 @@ typedef struct {
 
 int is_leap_year(int year);
 int get_year_start_day(int year);
-void print_calendar(int year, int daycode);
+void print_calendar(int year, int start_day);
 int enter_year(void);
 
 #endif //CALENDAR_H
